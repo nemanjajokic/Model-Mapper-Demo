@@ -38,4 +38,14 @@ public class UcenikServiceImpl implements UcenikService {
 		return uceniciDto;
 	}
 
+	@Override
+	public List<UcenikDto> poslednjihPet() {
+		List<Ucenik> ucenici = ucenikRepo.getlastFive();
+		List<UcenikDto> uceniciDto = new ArrayList<>();
+		
+		for(Ucenik u : ucenici) uceniciDto.add(ucenikMapper.UcenikToDto(u));
+		
+		return uceniciDto;
+	}
+
 }

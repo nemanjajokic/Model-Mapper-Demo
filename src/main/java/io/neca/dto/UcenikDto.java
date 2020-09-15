@@ -2,20 +2,23 @@ package io.neca.dto;
 
 import java.util.List;
 
+import io.neca.model.Profesor;
+import io.neca.model.Skola;
+
 public class UcenikDto {
 
 	private int broj;
 	private String ime;
 	private String prezime;
 	private int smer;
-	private SkolaDto skola;
-	private List<ProfesorDto> profesori;
+	private Skola skola;
+	private List<Profesor> profesori;
 
 	public UcenikDto() {
 		super();
 	}
 
-	public UcenikDto(int broj, String ime, String prezime, int smer, SkolaDto skola, List<ProfesorDto> profesori) {
+	public UcenikDto(int broj, String ime, String prezime, int smer, Skola skola, List<Profesor> profesori) {
 		super();
 		this.broj = broj;
 		this.ime = ime;
@@ -57,19 +60,19 @@ public class UcenikDto {
 		this.smer = smer;
 	}
 
-	public SkolaDto getSkola() {
+	public Skola getSkola() {
 		return skola;
 	}
 
-	public void setSkola(SkolaDto skola) {
+	public void setSkola(Skola skola) {
 		this.skola = skola;
 	}
 
-	public List<ProfesorDto> getProfesori() {
+	public List<Profesor> getProfesori() {
 		return profesori;
 	}
 
-	public void setProfesori(List<ProfesorDto> profesori) {
+	public void setProfesori(List<Profesor> profesori) {
 		this.profesori = profesori;
 	}
 

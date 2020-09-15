@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>index</title>
+<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+	crossorigin="anonymous">
+</head>
+<body>
+
+<div align="center" class="container c">
+	<h1>SQL stored procedure demo</h1><br>
+	<table border="1" class="table t">
+		<thead>
+			<tr>
+				<th>Broj u dnevniku</th>
+				<th>Ime</th>
+				<th>Prezime</th>
+				<th>Smer</th>
+				<th>Skola</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="ucenik : ${ucenici}">
+				<td th:text="${ucenik.broj}"></td>
+				<td th:text="${ucenik.ime}"></td>
+				<td th:text="${ucenik.prezime}"></td>
+				<td th:text="${ucenik.smer}"></td>
+				<td th:text="${ucenik.skola}"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>

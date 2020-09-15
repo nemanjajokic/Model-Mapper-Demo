@@ -27,6 +27,12 @@ public class Ucenik {
 		super();
 	}
 
+	public Ucenik(String ime, String prezime) {
+		super();
+		this.ime = ime;
+		this.prezime = prezime;
+	}
+
 	public Ucenik(int broj, String ime, String prezime, int smer, Skola skola, List<Profesor> profesori) {
 		super();
 		this.broj = broj;

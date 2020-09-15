@@ -14,9 +14,15 @@ public class SkolaController {
 	UcenikService ucenikService;
 	
 	@GetMapping("/")
-	private String homePage(Model model) {
+	public String homePage(Model model) {
 		model.addAttribute("ucenici", ucenikService.getAll());
 		return "ucenikLista";
+	}
+	
+	@GetMapping("/index")
+	public String index(Model model) {
+		model.addAttribute("ucenici", ucenikService.poslednjihPet());
+		return "index";
 	}
 	
 }

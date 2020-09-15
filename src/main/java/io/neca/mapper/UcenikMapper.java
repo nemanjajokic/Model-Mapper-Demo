@@ -7,23 +7,25 @@ import io.neca.model.Ucenik;
 
 @Configuration
 public class UcenikMapper {
-
+	
 	public UcenikDto UcenikToDto(Ucenik ucenik) {
 		UcenikDto ucenikDto = new UcenikDto();
-		ucenikDto.setBroj(ucenik.getBroj());
-		ucenikDto.setIme(ucenik.getIme());
-		ucenikDto.setPrezime(ucenik.getPrezime());
-		ucenikDto.setSmer(ucenik.getSmer());
+		if(ucenik.getBroj() != 0) ucenikDto.setBroj(ucenik.getBroj());
+		if(ucenik.getIme() != null) ucenikDto.setIme(ucenik.getIme());
+		if(ucenik.getPrezime() != null) ucenikDto.setPrezime(ucenik.getPrezime());
+		if(ucenik.getSmer() != 0) ucenikDto.setSmer(ucenik.getSmer());
+		if(ucenik.getSkola() != null) ucenikDto.setSkola(ucenik.getSkola());
 		
 		return ucenikDto;
 	}
 	
 	public Ucenik dtoToUcenik(UcenikDto ucenikDto) {
 		Ucenik ucenik = new Ucenik();
-		ucenik.setBroj(ucenikDto.getBroj());
-		ucenik.setIme(ucenikDto.getIme());
-		ucenik.setPrezime(ucenikDto.getPrezime());
-		ucenik.setSmer(ucenikDto.getSmer());
+		if(ucenikDto.getBroj() != 0) ucenik.setBroj(ucenikDto.getBroj());
+		if(ucenik.getIme() != null) ucenik.setIme(ucenikDto.getIme());
+		if(ucenik.getPrezime() != null)ucenik.setPrezime(ucenikDto.getPrezime());
+		if(ucenik.getSmer() != 0) ucenik.setSmer(ucenikDto.getSmer());
+		if(ucenik.getSkola() != null) ucenik.setSkola(ucenikDto.getSkola());
 		
 		return ucenik;
 	}
