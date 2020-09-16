@@ -18,6 +18,12 @@ public class UcenikDto {
 		super();
 	}
 
+	public UcenikDto(String ime, String prezime) {
+		super();
+		this.ime = ime;
+		this.prezime = prezime;
+	}
+
 	public UcenikDto(int broj, String ime, String prezime, int smer, Skola skola, List<Profesor> profesori) {
 		super();
 		this.broj = broj;

@@ -22,10 +22,10 @@ public class UcenikMapper {
 	public Ucenik dtoToUcenik(UcenikDto ucenikDto) {
 		Ucenik ucenik = new Ucenik();
 		if(ucenikDto.getBroj() != 0) ucenik.setBroj(ucenikDto.getBroj());
-		if(ucenik.getIme() != null) ucenik.setIme(ucenikDto.getIme());
-		if(ucenik.getPrezime() != null)ucenik.setPrezime(ucenikDto.getPrezime());
-		if(ucenik.getSmer() != 0) ucenik.setSmer(ucenikDto.getSmer());
-		if(ucenik.getSkola() != null) ucenik.setSkola(ucenikDto.getSkola());
+		if(ucenikDto.getIme() != null) ucenik.setIme(ucenikDto.getIme());
+		if(ucenikDto.getPrezime() != null)ucenik.setPrezime(ucenikDto.getPrezime());
+		if(ucenikDto.getSmer() != 0) ucenik.setSmer(ucenikDto.getSmer());
+		if(ucenikDto.getSkola() != null) ucenik.setSkola(ucenikDto.getSkola());
 		
 		return ucenik;
 	}

@@ -6,23 +6,23 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import io.neca.model.Ucenik;
+import io.neca.model.UcenikType;
 
 public interface UcenikRepository extends JpaRepository<Ucenik, Integer> {
 
 //	@Procedure("get_all_info")
-//	@Query(value = "use skola; call get_all_info", nativeQuery = true)
 //	List<Ucenik> getAllInfo();
-
-//	@Query(value = "SELECT * from ucenik ORDER BY broj DESC LIMIT 5", nativeQuery = true)
-//	List<Ucenik> getlastFive();
 	
 	@Query("select new io.neca.model.Ucenik(u.ime, u.prezime) from Ucenik u")
 	List<Ucenik> getlastFive();
+
+	@Query(value = "select broj, ime, prezime from ucenik order by broj desc limit 5", nativeQuery = true)
+	List<UcenikType> getlastFive2();
+
+	@Query(value = "select * from ucenik order by broj desc limit 3", nativeQuery = true)
+	List<Ucenik> getLastThree();
 	
-//	@Query(value = "select * from ucenik order by broj desc limit 5", nativeQuery = true)
-//	List<Ucenik> getlastFive();
-	
-//	@Query("SELECT u.ime, u.prezime FROM Ucenik u ORDER BY broj DESC")
+//	@Query(value = "select ime, prezime from ucenik order by broj desc limit 5", nativeQuery = true)
 //	List<Ucenik> getlastFive();
 	
 }

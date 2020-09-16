@@ -18,11 +18,17 @@ public class SkolaController {
 		model.addAttribute("ucenici", ucenikService.getAll());
 		return "ucenikLista";
 	}
-	
+
 	@GetMapping("/index")
 	public String index(Model model) {
-		model.addAttribute("ucenici", ucenikService.poslednjihPet());
+		model.addAttribute("ucenici", ucenikService.najnoviji());
 		return "index";
 	}
+	
+//	@GetMapping("/index")
+//	public String index(Model model) {
+//		model.addAttribute("ucenici", ucenikService.poslednjihPet());
+//		return "index";
+//	}
 	
 }
