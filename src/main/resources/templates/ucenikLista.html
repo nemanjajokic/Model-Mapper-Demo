@@ -10,8 +10,11 @@
 </head>
 <body>
 
-<div align="center" class="container c">
+<div class="container c">
 	<h1>Tabela Ucenika</h1><br>
+	
+	<a th:href="@{getUcenikForma}" class="btn btn-primary btn-sm mb-3">Add Ucenik</a>
+	
 	<table border="1" class="table t">
 		<thead>
 			<tr>
@@ -19,6 +22,7 @@
 				<th>Ime</th>
 				<th>Prezime</th>
 				<th>Smer</th>
+				<th>Operacije</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,6 +31,10 @@
 				<td th:text="${ucenik.ime}"></td>
 				<td th:text="${ucenik.prezime}"></td>
 				<td th:text="${ucenik.smer}"></td>
+				<td>
+					<a th:href="@{/update/{broj}(broj=${ucenik.broj})}" class="btn btn-primary">Update</a>
+					<a th:href="@{/delete/{broj}(broj=${ucenik.broj})}" class="btn btn-danger">Delete</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>

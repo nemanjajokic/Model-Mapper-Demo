@@ -2,6 +2,7 @@ package io.neca.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,29 @@ public class UcenikServiceImpl implements UcenikService {
 	@Override
 	public List<UcenikType> najnoviji() {
 		return ucenikRepo.getlastFive2();
+	}
+
+	@Override
+	public void addUcenik(Ucenik ucenik) {
+		ucenikRepo.save(ucenik);
+	}
+
+	@Override
+	public Ucenik findUcenikByID(int id) {
+		Optional<Ucenik> optional = ucenikRepo.findById(id);
+		Ucenik ucenik = null;
+		if(optional.isPresent()) {
+			ucenik = optional.get();
+		} else {
+			throw new RuntimeException("ucenik sa id-ijem: " + id + "nije prodadjen");
+		}
+		
+		return ucenik;
+	}
+	
+	@Override
+	public void deleteUcenik(int id) {
+		ucenikRepo.deleteById(id);
 	}
 
 }

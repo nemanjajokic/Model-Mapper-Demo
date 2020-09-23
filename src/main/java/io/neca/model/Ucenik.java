@@ -33,6 +33,14 @@ public class Ucenik {
 		this.prezime = prezime;
 	}
 
+	public Ucenik(int broj, String ime, String prezime, int smer) {
+		super();
+		this.broj = broj;
+		this.ime = ime;
+		this.prezime = prezime;
+		this.smer = smer;
+	}
+
 	public Ucenik(int broj, String ime, String prezime, int smer, Skola skola, List<Profesor> profesori) {
 		super();
 		this.broj = broj;
