@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.neca.dto.UcenikDto;
+import io.neca.exception.UcenikNotFoundException;
 import io.neca.mapper.UcenikMapper;
 import io.neca.model.Ucenik;
 import io.neca.model.UcenikType;
@@ -62,7 +63,7 @@ public class UcenikServiceImpl implements UcenikService {
 		if(optional.isPresent()) {
 			ucenik = optional.get();
 		} else {
-			throw new RuntimeException("ucenik sa id-ijem: " + id + "nije prodadjen");
+			throw new UcenikNotFoundException("ucenik sa id-ijem: " + id + "nije prodadjen");
 		}
 		
 		return ucenik;
